@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service'; 
 
 
@@ -20,9 +20,13 @@ export class LazylistsComponent implements OnInit {
   }
 
   getItem() {
-    this.apiService.getItem(this.apikey, this.barcode).subscribe(item => this.item = item);
-    console.log(this.item, 'item');
+    if (this.barcode != '') {
+      this.apiService.getItem(this.apikey, this.barcode).subscribe(item => { console.log(item); });
+      this.barcode = '';
+      console.log(this.item, 'item');
+    } else {
+      console.log('Bad barcode');
+    }
   }
-  
 
 }

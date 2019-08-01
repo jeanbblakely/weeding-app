@@ -1,7 +1,7 @@
 <h1>Lazy Lists</h1>
 
 <div class="form-group">
-    <form>
+    <form (ngSubmit)="getItem()">
         <div class="barcode">
             <input type="text" placeholder="Barcode" name="barcode" [(ngModel)]="barcode">
         </div>
