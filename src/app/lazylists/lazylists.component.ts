@@ -21,9 +21,11 @@ export class LazylistsComponent implements OnInit {
 
   getItem() {
     if (this.barcode != '') {
-      this.apiService.getItem(this.apikey, this.barcode).subscribe(item => { console.log(item); });
+      this.apiService.getItem(this.apikey, this.barcode).subscribe(item => { 
+        console.log(item);
+        this.item = item;
+        console.log(this.item, 'item'); });
       this.barcode = '';
-      console.log(this.item, 'item');
     } else {
       console.log('Bad barcode');
     }
