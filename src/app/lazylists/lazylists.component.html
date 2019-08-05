@@ -9,4 +9,4 @@
     <button (click)="getItem()">Get Item</button>
 </div>
 
-<p>Item is {{item}}</p>
+<p *ngIf="item">Item is {{item.bib_data.title}}</p>
