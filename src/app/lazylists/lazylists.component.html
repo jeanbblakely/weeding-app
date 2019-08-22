@@ -1,12 +1,12 @@
 <h1>Lazy Lists</h1>
 
 <div class="form-group">
-    <form (ngSubmit)="getItem()">
+    <form (ngSubmit)="addToSet()">
         <div class="barcode">
             <input type="text" placeholder="Barcode" name="barcode" [(ngModel)]="barcode">
         </div>
     </form>
-    <button (click)="getItem()">Get Item</button>
+    <button (click)="addToSet()">Get Item</button>
 </div>
 
 <p *ngIf="item">Item is {{item.bib_data.title}}</p>
