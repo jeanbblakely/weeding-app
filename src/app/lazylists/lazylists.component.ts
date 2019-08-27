@@ -17,7 +17,7 @@ export class LazylistsComponent implements OnInit {
 
   constructor(private apiService: ApiserviceService) { 
     this.apikey = 'l8xx432b7816735f4aebaa9574c69633e632';
-    this.set_id = 'herestheset';
+    this.set_id = '1562716610002946';
   }
 
   ngOnInit() {
@@ -38,6 +38,7 @@ export class LazylistsComponent implements OnInit {
         console.log(this.item.bib_data.mms_id, 'item bib data');
         this.generateSetXML();
         console.log(this.setXML, 'setxml');
+        this.apiService.postItem(this.set_id, this.apikey, this.setXML);
 
       });
       this.barcode = '';
